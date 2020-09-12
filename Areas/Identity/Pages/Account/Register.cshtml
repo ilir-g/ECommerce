@@ -1,0 +1,105 @@
+﻿@page
+@model Ecommerce.Areas.Identity.Pages.Account.RegisterModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap core CSS-->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Register an Account</div>
+            <div class="card-body">
+
+
+                @using (Html.BeginForm())
+                {
+                    @ViewData["Mesagge"]
+                    <div style="color: green;">@Model.StatusSuccess</div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Input.Name)
+                        <div class="form-label-group">
+                            @Html.EditorFor(model => model.Input.Name, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                            @Html.ValidationMessageFor(model => model.Input.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Input.Email)
+                        <div class="form-label-group">
+                            @Html.EditorFor(model => model.Input.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Input.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Input.Password)
+                                <div class="form-label-group">
+                                    @Html.EditorFor(model => model.Input.Password, new { htmlAttributes = new { placeholder = "Password", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Input.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                @Html.LabelFor(model => model.Input.ConfirmPassword)
+                                <div class="form-label-group">
+                                    @Html.EditorFor(model => model.Input.ConfirmPassword, new { htmlAttributes = new { placeholder = "Confirm Password", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Input.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Input.PhoneNumber)
+                        <div class="form-label-group">
+                            @Html.EditorFor(model => model.Input.PhoneNumber, new { htmlAttributes = new { placeholder = "Phone Number", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Input.PhoneNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                }
+
+                @section Scripts {
+                    <partial name="_ValidationScriptsPartial" />
+                }
+
+
+                <div class="text-center">
+                    <a asp-area="Identity" asp-page="/Account/Login" class="d-block small">Login</a>
+                    <a asp-area="Identity" asp-page="/Account/ForgotPassword" class="d-block small">Forgot password?</a>
+
+                    <!-- @Html.ActionLink("Login", "Login", new { htmlAttributes = new { @class = "d-block small mt-3" } })
+         @Html.ActionLink("Forgot your password?", "ForgotPassword", new { htmlAttributes = new { @class = "d-block small mt-3" } })-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
+
+
+</body>
+</html>

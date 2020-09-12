@@ -1,0 +1,98 @@
+﻿@page "{id:int}"
+@model Ecommerce.Pages.Fornitori.EditModel
+@{
+    ViewData["Title"] = ViewData["Title"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@ViewData["Mesagge"]</h2>
+<h3>@ViewData["Error"]</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            //Only when you EDIT
+            var ID = Convert.ToInt32(@RouteData.Values["id"]);
+            if (ID != 0)
+            {
+                @Html.HiddenFor(model => model.fornitore.IdFornitore)
+            }
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.Nome)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.Nome, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                    @Html.ValidationMessageFor(model => model.fornitore.Nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.Cognome)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.Cognome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.Cognome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.RagioneSociale)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.RagioneSociale, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.RagioneSociale, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.CodiceFiscale)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.CodiceFiscale, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.CodiceFiscale, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.DataNascita)
+                <div class="form-label-group">
+                    @Html.TextBoxFor(model => model.fornitore.DataNascita, "{0:yyyy-MM-dd}", htmlAttributes: new { type = "date", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fornitore.DataNascita, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.LuogoNascita)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.LuogoNascita, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.LuogoNascita, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.Sesso)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.Sesso, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.Sesso, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fornitore.PersonaFisica)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.fornitore.PersonaFisica, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fornitore.PersonaFisica, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary btn-block" />
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@(Url.Page("/Fornitori/Ricerca"))"><i class="fas fa-arrow-circle-left"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

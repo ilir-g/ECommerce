@@ -1,0 +1,105 @@
+﻿@page
+@model Ecommerce.Pages.Admin.Ruoli.GestireRuoliModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Manage User Roles</h2>
+@Html.ActionLink("Create New Role", "", "/Admin/Ruoli/CreateRuoli")  | @Html.ActionLink("Manage User Role", "", "/Admin/Ruoli/IndexRuoli")
+<hr />
+<div class="container-fluid">
+    <div class="row col-md-12 col-lg-12">
+        <div class="col-md-4 col-lg-6">
+            <h2>Role Add to User</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="alert-success">@Model.TempMessageAdd</div>
+                <div class="form-group">
+                    @Html.LabelFor(u => u.UtenteNome):
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(x => Model.UtenteId, new SelectList(Model.GetUtenti(), "Value", "Text"), "- Select Utente -", new { required = "required", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(u => u.RuoloName):
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(x => Model.RuoloId, new SelectList(Model.GetRoles(), "Value", "Text"), "- Select Ruolo -", new { required = "required", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" asp-page-handler="AddUserToRole" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-4 col-lg-6">
+            <h2>Get roles for a user</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(u => u.UtenteNome):
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(x => Model.UtenteRuoloId, new SelectList(Model.GetUtenti(), "Value", "Text"), "- Select Utente -", new { required = "required", @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" asp-page-handler="GetUserRole" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            }
+            @if (Model.RuoliDiUtente != null)
+            {
+                <div class="form-group">
+                    <h3>Roles for this user </h3>
+
+                    <ol>
+                        @foreach (string s in Model.RuoliDiUtente)
+                        {
+                            <li>@s</li>
+                        }
+                    </ol>
+
+                </div>
+            }
+            else if (Model.HasRuolo == -1)
+            {
+                <h4 class="alert-info">There is no role for this user </h4>
+            }
+
+        </div>
+
+        <div class="col-md-4 col-lg-6">
+            <h2>Delete a Role from User</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="alert-warning">@Model.TempMessageDel</div>
+                <div class="form-group">
+                    @Html.LabelFor(u => u.UtenteNome):
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(x => Model.UtenteIdDel, new SelectList(Model.GetUtenti(), "Value", "Text"), "- Select Utente -", new { required = "required", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(u => u.RuoloName):
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(x => Model.RuoloIdDel, new SelectList(Model.GetRoles(), "Value", "Text"), "- Select Ruolo -", new { required = "required", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" asp-page-handler="DeleteUserFromRole" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

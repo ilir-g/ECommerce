@@ -1,0 +1,273 @@
+﻿@page "{id:int}"
+
+@using Ecommerce.Pages.Prodotti
+@model OrdineModel
+@{
+    ViewData["Title"] = "Ordine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Ordine dell prodotto
+    </div>
+    
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="card-body">
+            <div style="color: red;">@ViewData["Error"]</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <table style="align-content:center; width:100%; border-spacing: 5px;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Descrizione dell prodotto
+                                    </td>
+                                    <td>
+                                        @Model.prodotto.Descrizione
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.ordine.Quantita)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(model => model.ordine.Quantita, new { htmlAttributes = new { @class = "form-control", autofocus = true, @min = "0", @max = "10000", required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.ordine.Quantita, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Prezzo
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(model => model.prodotto.Prezzo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.prodotto.Prezzo, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model=>model.Fattura.IvaFattura)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(model => model.Fattura.IvaFattura, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.IvaFattura, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.ordine.SommaTotale)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(model => model.ordine.SommaTotale, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.ordine.SommaTotale, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.ordine.Cita)
+                                    </td>
+                                    <td>
+                                      
+                                            @Html.DropDownListFor(model => model.ordine.Cita, new SelectList(
+                                            Model.infoProdotti, "LuogoMagazzino", "LuogoMagazzino"),"---- Cita ----", htmlAttributes: new { @class = "form-control", required = "required"})
+                                        @Html.ValidationMessageFor(model => model.ordine.Cita, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.ordine.Date)
+                                    </td>
+                                    <td>
+                                        @DateTime.Today.ToLongDateString()
+                                        @*new System.Globalization.CultureInfo("it-IT")*@
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Indirizzo Fattura</h6>
+                        <table style="align-content:center; width:100%; border-spacing: 5px;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.Nome, new { htmlAttributes = new { @class = "form-control", autofocus = true, required="required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.Nome, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.Cognome)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.Cognome, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.Cognome, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.Email)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.Email, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.Email, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.DataNascita)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.DataNascita, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.DataNascita, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.Telefono)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.Telefono, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.Telefono, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.Indirizzo)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.Indirizzo, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.Indirizzo, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(m => m.Fattura.CodicePostale)
+                                    </td>
+                                    <td>
+                                        @Html.EditorFor(m => m.Fattura.CodicePostale, new { htmlAttributes = new { @class = "form-control", autofocus = true, required = "required" } })
+                                        @Html.ValidationMessageFor(model => model.Fattura.CodicePostale, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <h6>Indirizzo Consegna</h6>
+                <div>
+                @Html.CheckBox("Uguale a Indirizzo Fattura", true, new { onchange = "OnChangeValore(this)" })
+                @Html.Label("Uguale a Indirizzo Fattura", "Uguale a Indirizzo Fattura", new  { htmlattributes = new { @class = "form-control", autofocus = true } })   
+                </div>
+                <div id="divConsgena" style="display:none" class="col-md-6">
+                    <table style=" width:100%; border-spacing: 5px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.Nome)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.Nome, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.Nome, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.Cognome)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.Cognome, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.Cognome, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.Email)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.Email, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.Email, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.DataNascita)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.DataNascita, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.DataNascita, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.Telefono)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.Telefono, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.Telefono, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.Indirizzo)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.Indirizzo, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.Indirizzo, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(m => m.Consegna.CodicePostale)
+                                </td>
+                                <td>
+                                    @Html.EditorFor(m => m.Consegna.CodicePostale, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.Consegna.CodicePostale, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group col-md-2" style="float: right;padding-top: 10px;">
+                <input type="submit" value="Ordine" asp-page-handler="SaveOrder" class="btn btn-primary btn-block" onclick="document.getElementById('ordine_SommaTotale').disabled=''" />
+            </div>
+        </div>
+
+    }
+
+
+               
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+
+
+</div>
+
+<script src="~/lib/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $('#prodotto_Prezzo,#ordine_Quantita').on('input', function () {
+        var val1 = Number($('#prodotto_Prezzo').val());
+        var val2 = Number($('#ordine_Quantita').val());
+        
+        $('#ordine_SommaTotale').val(isNaN(val1 * val2) ? 0 : (val1 * val2));
+        var valIva = $('#ordine_SommaTotale').val();
+        $('#Fattura_IvaFattura').val(isNaN(valIva * 0.02) ? 0 : (valIva * 0.02))
+    });
+    function OnChangeValore(element) {
+        if (element.checked) {
+            $("#divConsgena").hide();
+        } else {
+            $("#divConsgena").show();
+        }
+    }
+</script>

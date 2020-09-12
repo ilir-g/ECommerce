@@ -1,0 +1,40 @@
+﻿@page
+@model Ecommerce.Pages.Admin.Ruoli.CreateRuoliModel
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Html.ActionLink("Back To Roles", "", "/Admin/Ruoli/IndexRuoli")
+<hr />
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Model.ResultMessage
+
+            @Html.HiddenFor(r => r.Ruolo.Id)
+            @Html.HiddenFor(r => r.Ruolo.ConcurrencyStamp)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Ruolo.Name)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.Ruolo.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ruolo.Name)
+
+                </div>
+            </div>
+            <div class="form-group">
+                <button asp-page-handler="AddRuolo" type="submit" class="btn btn-primary btn-block ">Submit</button>
+            </div>
+
+        }
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

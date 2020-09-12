@@ -1,0 +1,76 @@
+﻿@page "{id:int}"
+@model Ecommerce.Pages.Vendite.EditModel
+@{
+    ViewData["Title"] = ViewData["Title"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<h2>@ViewData["Mesagge"]</h2>
+<h3>@ViewData["Error"]</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            //Only when you EDIT
+            var ID = Convert.ToInt32(@RouteData.Values["id"]);
+            if (ID != 0)
+            {
+                @Html.HiddenFor(model => model.vendite.IdVendita)
+            }
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.vendite.Cliente): @Html.LabelFor(model => model.vendite.Cliente.Nome) @Html.LabelFor(model => model.vendite.Cliente.Cognome)
+                <div class="form-label-group">
+                    @Html.DropDownListFor(model => model.vendite.IdCliente, new SelectList(
+                           Model.ListClienti, "IdCliente", "Nome"), htmlAttributes: new { @class = "form-control"})
+
+                    @Html.ValidationMessageFor(model => model.vendite.IdCliente, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.vendite.Prodotto):  @Html.LabelFor(model => model.vendite.Prodotto.Descrizione)
+                <div class="form-label-group">
+                    @Html.DropDownListFor(model => model.vendite.IdProdotto, new SelectList(
+                                           Model.ListProdotti, "IdProdotto", "Descrizione"), htmlAttributes: new { @class = "form-control"})
+
+                    @Html.ValidationMessageFor(model => model.vendite.Prodotto.Descrizione, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.vendite.Data)
+                <div class="form-label-group">
+                    @Html.TextBoxFor(model => model.vendite.Data, "{0:yyyy-MM-dd}", htmlAttributes: new { type = "date", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.vendite.Data, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.vendite.Importo)
+                <div class="form-label-group">
+                    @Html.EditorFor(model => model.vendite.Importo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vendite.Importo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary btn-block" />
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@(Url.Page("/Vendite/Ricerca"))"><i class="fas fa-arrow-circle-left"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

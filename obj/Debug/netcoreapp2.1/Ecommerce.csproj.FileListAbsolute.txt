@@ -1,0 +1,124 @@
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.deps.json
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.runtimeconfig.json
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.runtimeconfig.dev.json
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.dll
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.pdb
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.Views.dll
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.Views.pdb
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.csprojAssemblyReference.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.csproj.CoreCompileInputs.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorAssemblyInfo.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorAssemblyInfo.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.AssemblyInfoInputs.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.AssemblyInfo.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.TagHelpers.input.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.TagHelpers.output.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorCoreGenerate.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Manage\Index.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ResetPassword.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\CreateRuoli.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\GestireRuoli.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\IndexRuoli.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\CreateCliente.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\Edit.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\Ricerca.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Fornitori\Edit.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Fornitori\Ricerca.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Ordini\Ricerca.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Edit.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Info.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Ordine.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Ricerca.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Vendite\Edit.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Vendite\Ricerca.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorTargetAssemblyInfo.cache
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorTargetAssemblyInfo.cs
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.Views.pdb
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.dll
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.pdb
+C:\Users\ilir.megi\Desktop\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.csproj.CopyComplete
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.deps.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.runtimeconfig.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.runtimeconfig.dev.json
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.dll
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.pdb
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.Views.dll
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\bin\Debug\netcoreapp2.1\Ecommerce.Views.pdb
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.csprojAssemblyReference.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorAssemblyInfo.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorAssemblyInfo.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.AssemblyInfoInputs.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.AssemblyInfo.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.TagHelpers.input.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.TagHelpers.output.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorCoreGenerate.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\CreateRuoli.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\GestireRuoli.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Admin\Ruoli\IndexRuoli.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\CreateCliente.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\Edit.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Clienti\Ricerca.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Fornitori\Edit.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Fornitori\Ricerca.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Ordini\Ricerca.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Edit.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Info.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Ordine.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Prodotti\Ricerca.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Vendite\Edit.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\Vendite\Ricerca.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorTargetAssemblyInfo.cache
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.RazorTargetAssemblyInfo.cs
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.Views.pdb
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.dll
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.pdb
+C:\Users\Ilir Gashi\Downloads\eComerce\Ecommerce\obj\Debug\netcoreapp2.1\Ecommerce.csproj.CopyComplete

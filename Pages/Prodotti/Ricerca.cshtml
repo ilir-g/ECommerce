@@ -1,0 +1,125 @@
+﻿@page
+
+@using Ecommerce.Pages
+@model ProdottiModel
+@{
+    ViewData["Title"] = "Prodotti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Overview</li>
+</ol>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="form-group col-md-12">
+            @Html.LabelFor(c => c.CategoriaProdotti.CategoriaNome, "Filter per categoria"):
+            <div class="form-label-group form-inline col-md-8">
+                <div class="col-md-4">
+                    @Html.DropDownListFor(x => Model.IdCategoriaProdotti, new SelectList(Model.GetCategorie(), "Value", "Text"), "- Select Categoria -", new { @class = "form-control", @onchange = "CallChangefunc(this.value)" })
+                </div>
+                <div class="col-md-4">
+                    <button asp-page-handler="ProdottiByFilter" type="submit" class="btn btn-secondary btn-success">Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        La lista dei Prodotti
+        <span style="float: right;">
+            <a href="@(Url.Action("Edit", "Prodotti", new { id = 0 }))"><i class="fas fa-user"></i>  Crea nuovo prodotto</a>
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" style="width:100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Descrizione</th>
+                        <th>Altezza</th>
+                        <th>Larghezza</th>
+                        <th>Peso</th>
+                        <th>Prezzo</th>
+                        <th>Blocco?</th>
+                        <th>Categoria</th>
+                        <th>Ordine</th>
+                        <th>Edit/ Delete</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Descrizione</th>
+                        <th>Altezza</th>
+                        <th>Larghezza</th>
+                        <th>Peso</th>
+                        <th>Prezzo</th>
+                        <th>Blocco?</th>
+                        <th>Categoria</th>
+                        <th>Ordine</th>
+                        <th>Edit/ Delete</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @if (@Model.prodotti == null)
+                    {
+                        <tr>no items found</tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in @Model.prodotti)
+                        {
+                            var id = Convert.ToString(@item.IdProdotto);
+
+                            <tr>
+                                <td>
+                                    <a href="@(Url.Action("Info", "Prodotti", new { id = id }))">
+                                        @Html.DisplayFor(modelItem => item.Descrizione)
+                                    </a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Altezza)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Larghezza)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Peso)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prezzo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BloccoProdotto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoriaProdotti.CategoriaNome)
+                                </td>
+                                <td>
+                                    <a href="@(Url.Action("Ordine", "Prodotti", new { id = id }))"><i class="fas fa-shopping-cart"></i>Ordine</a>
+                                </td>
+                                <td>
+                                    <a href="@(Url.Action("Edit", "Prodotti", new { id = id }))"><i class="fas fa-pencil-alt"></i></a>
+
+                                    <a asp-page="./Ricerca" onclick="return confirm('Are you sure you want to delete this record?');"
+                                       asp-page-handler="Delete" asp-route-id="@item.IdProdotto"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+
+
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

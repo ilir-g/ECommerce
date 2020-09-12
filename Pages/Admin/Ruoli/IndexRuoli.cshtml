@@ -1,0 +1,33 @@
+﻿@page 
+@model Ecommerce.Pages.Admin.Ruoli.IndexRuoliModel
+
+@{
+    ViewData["Title"] = "Ruoli";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>@ViewData["Title"]</h4>
+@Html.ActionLink("Create New Role", "", "/Admin/Ruoli/CreateRuoli") 
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        @foreach (var r in Model.Ruoli)
+        {
+            @ViewData["StatusMessage"]
+            <div class="form-group">
+                <div class="form-label-group">
+                    @r.Name  
+                    <a asp-page="./CreateRuoli"  asp-route-id="@r.Id" class="alert-warning">Edit</a>|
+                    <a asp-page="./IndexRuoli" onclick="return confirm('Are you sure you want to delete this record?');"
+                       asp-page-handler="Delete" asp-route-id="@r.Id" class="alert-danger">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

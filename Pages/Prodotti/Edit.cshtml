@@ -1,0 +1,245 @@
+﻿@page "{id:int}"
+@using Ecommerce.Pages.Prodotti
+@model EditModel
+@{
+    ViewData["Title"] = ViewData["Title"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@ViewData["Mesagge"]</h2>
+<h3>@ViewData["Error"]</h3>
+
+<hr />
+
+@*      Edit / Update Product      *@
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @*Only when you edit*@
+            @if (@Model.IDTemp != 0)
+            {
+                @Html.HiddenFor(model => model.prodotto.IdProdotto)
+            }
+
+            <div class="row">
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Descrizione)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Descrizione, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Descrizione, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Altezza)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Altezza, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Altezza, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Larghezza)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Larghezza, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Larghezza, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Profondita)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Profondita, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Profondita, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Peso)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Peso, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Peso, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.prodotto.Prezzo)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.Prezzo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.Prezzo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    @Html.LabelFor(model => model.prodotto.CategoriaProdotti)
+                    <div class="form-label-group">
+                        @Html.DropDownListFor(model => model.prodotto.IdCategoria, new SelectList(
+                                               Model.ListCategoriaProdotti, "IdCategoria", "CategoriaNome", 4), htmlAttributes: new { @class = "form-control"})
+
+                        @Html.ValidationMessageFor(model => model.prodotto.CategoriaProdotti.CategoriaNome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-sm-3">
+                    @Html.LabelFor(model => model.prodotto.BloccoProdotto)
+                    <div class="form-label-group">
+                        @Html.EditorFor(model => model.prodotto.BloccoProdotto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.prodotto.BloccoProdotto, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="submit" value="Save" asp-page-handler="Save" class="btn btn-primary btn-block button1" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <br /><br />
+
+
+    @*     INFO PRODOTTO      *@
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Info per il prodotto
+            <span style="float: right;">
+                <input type="submit" value="+ Aggiungi" asp-page-handler="AddInfo" class="btn btn-primary btn-sm">
+            </span>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                @if (Model.ShowFormDetail)
+                {
+                    <label>Show form detail</label><br />
+                    <table class="table table-bordered" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th> Luogo Magazzino </th>
+                                <th> Quantita </th>
+                                <th> Media Venduti </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @Html.HiddenFor(model => model.infoprodotto.IdInfoProdotto)
+                            @Html.HiddenFor(model => model.infoprodotto.IdProdotto)
+
+                            <tr>
+                                <td>
+                                    @Html.EditorFor(model => model.infoprodotto.LuogoMagazzino, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                    @Html.ValidationMessageFor(model => model.infoprodotto.LuogoMagazzino, "", new { @class = "text-danger" })
+                                </td>
+                                <td>
+                                    @Html.EditorFor(model => model.infoprodotto.Quantita, new { htmlAttributes = new { @class = "form-control" }, required = "required" })
+                                    @Html.ValidationMessageFor(model => model.infoprodotto.Quantita, "", new { @class = "text-danger" })
+                                </td>
+                                <td>
+                                    @Html.EditorFor(model => model.infoprodotto.MediaVenduti, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.infoprodotto.MediaVenduti, "", new { @class = "text-danger" })
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Save Info" asp-page-handler="SaveInfo" asp-route-id="@Model.infoprodotto.IdInfoProdotto" class="btn btn-success btn-primary btn-sm">
+                    <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-outline-danger btn-primary btn-sm">
+                }
+                else
+                {
+                    <table class="table table-bordered" id="myTable" cellspacing="0">
+
+                        @*New Product*@
+
+                        @if (Model.infoprodotti == null)
+                        {
+                            <caption>Insert more information about the product that you are about to create.</caption>
+                        }
+                        /*Existing Product*/
+
+                        else
+                        {
+
+                            @if (Model.infoprodotti.Count == 0)
+                            {
+                                <caption>No information about this product</caption>
+                            }
+                            else
+                            {
+                                <thead>
+                                    <tr>
+                                        <th>  </th>
+                                        <th> Luogo Magazzino </th>
+                                        <th> Quantita </th>
+                                        <th> Media Venduti </th>
+                                        <th>  </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (var i = 0; i < @Model.infoprodotti.Count; i++)
+                                    {
+                                        var tempIDInfo = Model.infoprodotti[i].IdInfoProdotto;
+
+                                        @Html.HiddenFor(m => Model.infoprodotti[i].IdInfoProdotto)
+                                        @Html.HiddenFor(m => Model.infoprodotti[i].IdProdotto)
+                                        @Html.HiddenFor(m => Model.infoprodotti[i].LuogoMagazzino)
+                                        @Html.HiddenFor(m => Model.infoprodotti[i].Quantita)
+                                        @Html.HiddenFor(m => Model.infoprodotti[i].MediaVenduti)
+
+                                        @if (Model.infoprodotti[i].LuogoMagazzino != null && Model.infoprodotti[i] != null && Model.infoprodotti[i].LuogoMagazzino != null)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <input type="submit" value="Edit" asp-page-handler="Edit" asp-route-id="@Model.infoprodotti[i].IdInfoProdotto" class="btn btn-success btn-primary btn-block btn-sm">
+                                                    @*<a asp-page-handler="Edit" asp-route-id="@Model.infoprodotti[i].IdInfoProdotto"
+                                                        class="btn btn-success btn-primary btn-block btn-sm">Edit</a>*@
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(m => Model.infoprodotti[i].LuogoMagazzino, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(m => Model.infoprodotti[i].Quantita, new { htmlAttributes = new { @class = "form-control" } })
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(m => Model.infoprodotti[i].MediaVenduti, new { htmlAttributes = new { @class = "form-control" } })
+                                                </td>
+                                                <td>
+                                                    @*<input type="submit" value="Delete" asp-page-handler="Delete"  class="btn btn-danger btn-primary btn-block btn-sm">*@
+                                                    @*   asp-route-id="@Model.infoprodotti[i].IdInfoProdotto"   *@
+                                                    @*  <input type="hidden" name="id" value="@tempIDInfo" />  *@
+                                                    @*  data-id="@tempIDInfo"  *@
+                                                    @*<a onclick="return confirm('Are you sure you want to remove this record?');"
+                                                        asp-page-handler="Delete" asp-route-id="@Model.infoprodotti[i].IdInfoProdotto"
+                                                        class="btn btn-danger btn-primary btn-block btn-sm">Delete</a>*@
+                                                    <input type="submit" value="Delete" asp-page-handler="Delete"  asp-route-LuogoMagazzino="@Model.infoprodotti[i].LuogoMagazzino"
+                                                           onclick="return confirm('Are you sure you want to remove this record?');"
+                                                           class="btn btn-danger btn-primary btn-block btn-sm">
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            }
+                        }
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="@(Url.Page("/Prodotti/Ricerca"))"><i class="fas fa-arrow-circle-left"></i>Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

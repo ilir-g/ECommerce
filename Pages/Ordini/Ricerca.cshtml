@@ -1,0 +1,111 @@
+﻿@page
+
+@using Ecommerce.Pages.Ordini
+@model RicercaModel
+@{
+    ViewData["Title"] = "Ricerca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        Filter le ordine:
+    </li>
+</ol>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="form-label-group form-inline col-md-12">
+                <div class="col-md-3 form-label-group">
+                    @Html.TextBoxFor(x => Model.FilterData, "{0:yyyy-MM-dd}", htmlAttributes: new { type = "date", @class = "form-control", @onchange = "CallChangefunc(this.value)" })
+                </div>
+                <div class="col-md-3 form-label-group">
+                    @Html.DropDownListFor(x => Model.IDProd, new SelectList(Model.GetProdotto(), "Value", "Text"), "- Select Prodotto -", new { @class = "form-control", @onchange = "CallChangefunc(this.value)" })
+                </div>
+                <div class="col-md-3 form-label-group">
+                    @Html.DropDownListFor(x => Model.IDCita, new SelectList(Model.GetCita(), "Value", "Text"), "- Select Cita -", new { @class = "form-control", @onchange = "CallChangefunc(this.value)" })
+                </div>
+                <div class="col-md-2">
+                    <button asp-page-handler="OrdiniByFilter" type="submit" class="btn btn-secondary btn-success">Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        La lista delle Ordine
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Prodotto Descrizione</th>
+                        <th>Nome Cliente</th>
+                        <th>Quantita</th>
+                        <th>Prezzo</th>
+                        <th>SommaTotale</th>
+                        <th>Cita</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Prodotto Descrizione</th>
+                        <th>Nome Cliente</th>
+                        <th>Quantita</th>
+                        <th>Prezzo</th>
+                        <th>SommaTotale</th>
+                        <th>Cita</th>
+                        <th>Date</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @if (@Model.ordini == null)
+                    {
+                        <tr>no items found</tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in @Model.ordini)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prodotto.Descrizione)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cliente.Nome)  @Html.DisplayFor(modelItem => item.Cliente.Cognome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantita)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prodotto.Prezzo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SommaTotale)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cita)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

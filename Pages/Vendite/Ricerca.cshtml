@@ -1,0 +1,91 @@
+﻿@page
+
+@using Ecommerce.Pages
+@model VenditeModel
+@{
+    ViewData["Title"] = "Vendite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Overview</li>
+</ol>
+
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        La lista delle Vendite
+        <span style="float: right;">
+            <a href="@(Url.Action("Edit", "Vendite", new { id = 0 }))"><i class="fas fa-user"></i>  Crea nuova vendita</a>
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Prodotto Descrizione</th>
+                        <th>Nome Cliente</th>
+                        <th>Data</th>
+                        <th>Importo</th>
+                        <th>Edit/ Delete</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Prodotto Descrizione</th>
+                        <th>Nome Cliente</th>
+                        <th>Data</th>
+                        <th>Importo</th>
+                        <th>Edit/ Delete</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @if (@Model.Vendite == null)
+                    {
+                        <tr>no items found</tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in @Model.Vendite)
+                        {
+                            var id = Convert.ToString(@item.IdVendita);
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Prodotto.Descrizione)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cliente.Nome)  @Html.DisplayFor(modelItem => item.Cliente.Cognome)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Data)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Importo)
+                                </td>
+
+
+                                <td>
+                                    <a href="@(Url.Action("Edit", "Vendite", new { id = id }))"><i class="fas fa-pencil-alt"></i></a>
+
+                                    <a asp-page="./Ricerca" onclick="return confirm('Are you sure you want to delete this record?');"
+                                       asp-page-handler="Delete" asp-route-id="@item.IdVendita"><i class="fas fa-trash-alt"></i></a>
+
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

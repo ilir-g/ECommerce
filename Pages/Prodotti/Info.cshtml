@@ -1,0 +1,140 @@
+﻿@page "{id:int}"
+
+@using Ecommerce.Pages.Prodotti
+@model InfoModel
+@{
+    ViewData["Title"] = "Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Info per il prodotto con ID : @RouteData.Values["id"]</h2>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Prodotto 
+    </div>
+    <div class="card-body">
+        <table style="width:30%">
+            <tbody>
+                <tr>
+                    <td>
+                        Descrizione :
+                    </td>
+                    <td>
+                        @Model.prodotto.Descrizione
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Altezza :
+                    </td>
+                    <td>
+                        @Model.prodotto.Altezza
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Larghezza :
+                    </td>
+                    <td>
+                        @Model.prodotto.Larghezza
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Profondita :
+                    </td>
+                    <td>
+                        @Model.prodotto.Profondita
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Peso :
+                    </td>
+                    <td>
+                        @Model.prodotto.Peso
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Prezzo :
+                    </td>
+                    <td>
+                        @Model.prodotto.Prezzo
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Categoria :
+                    </td>
+                    <td>
+                        @Model.prodotto.CategoriaProdotti.CategoriaNome
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        BloccoProdotto :
+                    </td>
+                    <td>
+                        @Model.prodotto.BloccoProdotto
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        InfoProdotto
+    </div>
+    <div class="card-body">
+        @if (Model.infoprodotti.Count == 0)
+        {
+            <p>
+                No information about this product
+            </p>
+        }
+        else
+        {
+            <table style="width:40%">
+                <thead>
+                    <tr>
+                        <th>
+                            Luogo Magazzino
+                        </th>
+                        <th>
+                            Quantita
+                        </th>
+                        <th>
+                            Media Venduti
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.infoprodotti)
+                    {
+                        <tr>
+                            <td>
+                                @item.LuogoMagazzino
+                            </td>
+                            <td>
+                                @item.Quantita
+                            </td>
+                            <td>
+                                @item.MediaVenduti
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@(Url.Page("/Prodotti/Ricerca"))"><i class="fas fa-arrow-circle-left"></i>Back to List</a>
+</div>
+
